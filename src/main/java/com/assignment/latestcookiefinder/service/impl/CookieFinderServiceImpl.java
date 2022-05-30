@@ -65,8 +65,9 @@ public class CookieFinderServiceImpl implements CookieFinderService {
         }
         lineCommands = lineCommands[1].split("-d");
         if(lineCommands.length <= 1) {
-            throw new Exception("Please enter file and date");
+            throw new Exception("Please enter file and date for the specific date");
         }
-        findLatestCookieInDate(lineCommands[0].trim(), lineCommands[1].trim());
+        String latestCookie = findLatestCookieInDate(lineCommands[0].trim(), lineCommands[1].trim());
+        logger.info(latestCookie);
     }
 }
